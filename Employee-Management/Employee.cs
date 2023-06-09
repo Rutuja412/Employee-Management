@@ -8,27 +8,27 @@ namespace Employee_Management
     {
         public static void EmployeeAttendance()
         {
-            int IS_PART_TIME = 1;
-            int IS_FULL_TIME = 2;
-            int EMP_RATE_PER_HOUR = 20;
             int empHrs = 0;
             int empWage = 0;
+            const int IS_PART_TIME = 1;
+            const int IS_FULL_TIME = 2;
+            const int EMP_RATE_PER_HOUR = 20;
             Random random = new Random();
             int empCheck = random.Next(0, 3);
-            if (empCheck == IS_PART_TIME)
+            switch (empCheck)
             {
-                Console.WriteLine("Employee is Partially Present");
-                empHrs = 4;
-            }
-            else if (empCheck == IS_FULL_TIME)
-            {
-                Console.WriteLine("Employee is Present");
-                empHrs = 8;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-                empHrs = 0;
+                case IS_PART_TIME:
+                    Console.WriteLine("Employee is Part Time");
+                    empHrs = 4;
+                    break;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    Console.WriteLine("Employee is Full Time");
+
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Employee wage = " + empWage);
