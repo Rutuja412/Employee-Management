@@ -7,8 +7,9 @@ namespace Employee_Management
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Employee Management");
-           // Employee.EmployeeAttendance();
-            Employee.ComputeEmpWage();
+            Employee.ComputeEmpWage("Dmart", 20, 2, 10);
+            Employee.ComputeEmpWage("Reliance", 10, 4, 20);
+
         }
     }
 }
